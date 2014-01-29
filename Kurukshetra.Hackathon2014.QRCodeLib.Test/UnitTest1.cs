@@ -30,5 +30,21 @@ namespace Kurukshetra.Hackathon2014.QRCodeLib.Test
             }
             
         }
+
+        [TestMethod]
+        public void TestMethod2()
+        {
+            Bitmap bmap = new Bitmap(Image.FromFile("text.png"));
+            BitMatrix bmat = new BitMatrix(350, 350);
+            for (int i = 0; i < bmap.Height; i++)
+            {
+                for (int j = 0; j < bmap.Width; j++)
+                {
+                    bmat[j][i] = bmap.GetPixel(j, i);
+                }
+            }
+
+            
+        }
     }
 }

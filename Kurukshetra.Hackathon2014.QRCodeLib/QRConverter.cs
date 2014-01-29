@@ -18,5 +18,12 @@ namespace Kurukshetra.Hackathon2014.QRCodeLib
             BitMatrix imgBitmap = qrCode.encode(message, ZXing.BarcodeFormat.QR_CODE, 350, 350);
             return imgBitmap;
         }
+
+        public string getString(BitMatrix input)
+        {
+            QRCodeReader qrIn = new QRCodeReader();
+
+
+        }
     }
 }
