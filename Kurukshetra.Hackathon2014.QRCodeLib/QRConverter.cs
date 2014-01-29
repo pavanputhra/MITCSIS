@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using ZXing;
 using ZXing.QrCode;
 using ZXing.Common;
 using ZXing.QrCode.Internal;//bytematrix
@@ -19,11 +20,13 @@ namespace Kurukshetra.Hackathon2014.QRCodeLib
             return imgBitmap;
         }
 
-        public string getString(BitMatrix input)
-        {
-            QRCodeReader qrIn = new QRCodeReader();
+        //public string getString(BitMatrix input)
+        //{
+        //    QRCodeReader qrIn = new QRCodeReader();
 
 
-        }
+        //}
+
+        
     }
 }
