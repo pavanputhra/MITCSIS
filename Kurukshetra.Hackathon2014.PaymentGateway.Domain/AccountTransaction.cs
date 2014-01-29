@@ -10,13 +10,13 @@ namespace Kurukshetra.Hackathon2014.PaymentGateway.Domain
     public class AccountTransaction
     {
         [Required]
-        public Guid Id { get; set; }
+        public long Id { get; set; }
 
         [Required]
         public Account Account { get; set; }
 
         [Required]
-        public Guid AccountId { get; set; }
+        public long AccountId { get; set; }
 
         [Required]
         public DateTimeOffset DateTime { get; set; }
