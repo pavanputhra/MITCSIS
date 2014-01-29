@@ -1,0 +1,13 @@
+﻿@model string
+
+@{
+    ViewBag.Title = "RegisterCustomerSuccess";
+}
+
+<h2>RegisterCustomerSuccess</h2>
+
+<p>User Registered Successuflly</p>
+
+<p>Please scan below QRCode. It will be your secret. Don't loose or share it.</p>
+
+<img src="@Url.Action("SecretKey","Security",new {id = Model})" />

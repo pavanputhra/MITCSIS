@@ -22,6 +22,8 @@ namespace Kurukshetra.Hackathon2014.PaymentGateway.Web
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
+            DatabaseConfig.Init();
+            IoCConfig.Configure();
         }
     }
 }
