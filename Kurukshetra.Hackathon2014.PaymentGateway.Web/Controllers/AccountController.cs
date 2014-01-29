@@ -68,12 +68,13 @@ namespace Kurukshetra.Hackathon2014.PaymentGateway.Web.Controllers
         }
 
         [AllowAnonymous]
+        [HttpPost]
         public ActionResult RegisterCustomer(CustomerRegisterModel model)
         {
             if (ModelState.IsValid)
             {
                 registrationService.RegisterCustomer(model);
-                RedirectToAction("RegisterCustomerSuccess", new { id = model.UserName });
+                return RedirectToAction("RegisterCustomerSuccess", new { id = model.UserName });
             }
             return View();
         }
@@ -81,7 +82,7 @@ namespace Kurukshetra.Hackathon2014.PaymentGateway.Web.Controllers
         [AllowAnonymous]
         public ActionResult RegisterCustomerSuccess(string id)
         {
-            return View("RegisterCustomerSuccess", id);
+            return View("RegisterCustomerSuccess",(object)id);
         }
 
     }

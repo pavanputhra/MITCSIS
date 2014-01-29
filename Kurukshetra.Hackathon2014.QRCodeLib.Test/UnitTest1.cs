@@ -15,7 +15,7 @@ namespace Kurukshetra.Hackathon2014.QRCodeLib.Test
         public void TestMethod1()
         {
             QRConverter converter = new QRConverter();
-            BitMatrix imgMatrix = converter.getQR("Hello World!");
+            BitMatrix imgMatrix = converter.GetQR("Hello World!");
 
             using (Bitmap bm = new Bitmap(350,350))
             {

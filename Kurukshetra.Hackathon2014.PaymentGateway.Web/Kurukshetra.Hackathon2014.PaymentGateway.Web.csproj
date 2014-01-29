@@ -270,9 +270,16 @@
       <Project>{c022b4c8-f9d1-4174-881d-09221c9831ec}</Project>
       <Name>Kurukshetra.Hackathon2014.PaymentGateway.Store</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Kurukshetra.Hackathon2014.QRCodeLib\Kurukshetra.Hackathon2014.QRCodeLib.csproj">
+      <Project>{90e8b2e1-5861-4686-9bb1-7570ff34fc39}</Project>
+      <Name>Kurukshetra.Hackathon2014.QRCodeLib</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
