@@ -7,6 +7,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kurukshetra.Hackathon2014.P
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kurukshetra.Hackathon2014.PaymentGateway.Web.Tests", "Kurukshetra.Hackathon2014.PaymentGateway.Web.Tests\Kurukshetra.Hackathon2014.PaymentGateway.Web.Tests.csproj", "{1D60FD80-25F8-44B1-9771-2DFC916A0932}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kurukshetra.Hackathon2014.QRCodeLib", "Kurukshetra.Hackathon2014.QRCodeLib\Kurukshetra.Hackathon2014.QRCodeLib.csproj", "{90E8B2E1-5861-4686-9BB1-7570FF34FC39}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kurukshetra.Hackathon2014.QRCodeLib.Test", "Kurukshetra.Hackathon2014.QRCodeLib.Test\Kurukshetra.Hackathon2014.QRCodeLib.Test.csproj", "{00D6AF53-55E5-4D42-920E-E1079B199689}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +25,14 @@ Global
 		{1D60FD80-25F8-44B1-9771-2DFC916A0932}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1D60FD80-25F8-44B1-9771-2DFC916A0932}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1D60FD80-25F8-44B1-9771-2DFC916A0932}.Release|Any CPU.Build.0 = Release|Any CPU
+		{90E8B2E1-5861-4686-9BB1-7570FF34FC39}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{90E8B2E1-5861-4686-9BB1-7570FF34FC39}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{90E8B2E1-5861-4686-9BB1-7570FF34FC39}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{90E8B2E1-5861-4686-9BB1-7570FF34FC39}.Release|Any CPU.Build.0 = Release|Any CPU
+		{00D6AF53-55E5-4D42-920E-E1079B199689}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{00D6AF53-55E5-4D42-920E-E1079B199689}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{00D6AF53-55E5-4D42-920E-E1079B199689}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{00D6AF53-55E5-4D42-920E-E1079B199689}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
