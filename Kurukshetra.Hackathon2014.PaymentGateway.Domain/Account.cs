@@ -7,7 +7,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Kurukshetra.Hackathon2014.PaymentGateway.Domain
 {
-    class Account
+    public class Account
     {
         [Required]
         public Guid Id { get; set; }

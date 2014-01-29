@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Kurukshetra.Hackathon2014.PaymentGateway.Domain
 {
-    class Merchant
+    public class Merchant
     {
         [Required]
         public Guid Id { get; set; }
