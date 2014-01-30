@@ -34,9 +34,23 @@
   </PropertyGroup>
   <ItemGroup>
     <!-- A reference to the entire .NET Framework is automatically included -->
+    <ProjectReference Include="..\Kurukshetra.Hackathon2014.Dto\Kurukshetra.Hackathon2014.Dto.csproj">
+      <Project>{277d3061-2da3-45e3-b0ce-46d73dc8ad13}</Project>
+      <Name>Kurukshetra.Hackathon2014.Dto</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AuthenticateChallenge.cs" />
+    <Compile Include="ClientCore.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="CryptSharp">
+      <HintPath>..\packages\CryptSharpOfficial.2.0.0.0\lib\CryptSharp.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
