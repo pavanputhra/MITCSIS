@@ -10,12 +10,11 @@ namespace Kurukshetra.Hackathon2014.PaymentGateway.Domain
     public class Merchant
     {
         [Required]
-        public Guid Id { get; set; }
+        public long Id { get; set; }
 
         [Required]
         public string Name { get; set; }
 
-        [Required]
         public Account Account { get; set; }
     }
 }

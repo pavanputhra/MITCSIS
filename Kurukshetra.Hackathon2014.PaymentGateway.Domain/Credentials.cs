@@ -13,15 +13,18 @@ namespace Kurukshetra.Hackathon2014.PaymentGateway.Domain
         public string UserName { get; set; }
 
         [Required]
-        public Guid PersonId { get; set; }
+        public long PersonId { get; set; }
 
         [Required]
         public Person Person { get; set; }
 
         [Required]
-        public string HashedPassword { get; set; }
+        public byte[] HashedPassword { get; set; }
 
         [Required]
-        public string SecretKey { get; set; }
+        public byte[] SecretKey { get; set; }
+
+        [Required]
+        public DateTimeOffset CreatedDate { get; set; }
     }
 }

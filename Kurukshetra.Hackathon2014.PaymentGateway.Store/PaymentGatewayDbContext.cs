@@ -9,7 +9,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Kurukshetra.Hackathon2014.PaymentGateway.Store
 {
-    public class PaymentGatewayDbContext : DbContext
+    public class PaymentGatewayDbContext : DbContext, Kurukshetra.Hackathon2014.PaymentGateway.Store.IPaymentGatewayRepository
     {
         public PaymentGatewayDbContext()
             : base("DefaultConnection")
@@ -25,6 +25,7 @@ namespace Kurukshetra.Hackathon2014.PaymentGateway.Store
         public DbSet<Credentials> Credentials { get; set; }
         public DbSet<AuthenticationChallenge> AuthenticationChallenges { get; set; }
         public DbSet<PaymentChallenge> PaymentChallenges { get; set; }
+        public DbSet<Merchant> Merchants { get; set; }
 
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
@@ -35,7 +36,8 @@ namespace Kurukshetra.Hackathon2014.PaymentGateway.Store
             modelBuilder.Entity<AccountTransaction>().Property(p => p.Id).HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
             modelBuilder.Entity<Credentials>().HasKey(t => t.UserName);
             modelBuilder.Entity<AuthenticationChallenge>().HasKey(t => new { t.UserName, t.EpochTime });
-            modelBuilder.Entity<PaymentChallenge>().HasKey(t => new { t.MerchantId, t.OrderId, t.EpochTime });
+            modelBuilder.Entity<PaymentChallenge>().HasKey(t => new { t.MerchantId, t.OrderReferenceNo, t.EpochTime });
+            modelBuilder.Entity<Merchant>().Property(p => p.Id).HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
         }
     }
 }

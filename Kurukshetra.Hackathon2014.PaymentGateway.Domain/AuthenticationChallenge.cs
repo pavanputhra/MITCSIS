@@ -16,7 +16,7 @@ namespace Kurukshetra.Hackathon2014.PaymentGateway.Domain
         public long EpochTime { get; set; }
 
         [Required]
-        public string Challenge { get; set; }
+        public byte[] Challenge { get; set; }
 
         [Required]
         public DateTimeOffset ExpireDate { get; set; }

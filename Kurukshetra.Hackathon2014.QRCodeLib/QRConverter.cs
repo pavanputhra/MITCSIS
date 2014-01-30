@@ -13,7 +13,7 @@ namespace Kurukshetra.Hackathon2014.QRCodeLib
 {
     public class QRConverter
     {
-        public BitMatrix getQR(string message)
+        public BitMatrix GetQR(string message)
         {
             QRCodeWriter qrCode = new QRCodeWriter();
             BitMatrix imgBitmap = qrCode.encode(message, ZXing.BarcodeFormat.QR_CODE, 350, 350);

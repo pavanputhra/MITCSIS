@@ -9,17 +9,25 @@ namespace Kurukshetra.Hackathon2014.PaymentGateway.Domain
 {
     public class PaymentChallenge
     {
-        [Required]
-        public string MerchantId { get; set; }
+        public PaymentChallenge()
+        {
+            IsPaymentComplet = false;
+        }
 
         [Required]
-        public string OrderId { get; set; }
+        public long MerchantId { get; set; }
+
+        [Required]
+        public long OrderReferenceNo { get; set; }
 
         [Required]
         public long EpochTime { get; set; }
 
         [Required]
         public decimal Amount { get; set; }
+
+        [Required]
+        public bool IsPaymentComplet { get; set; }
 
     }
 }

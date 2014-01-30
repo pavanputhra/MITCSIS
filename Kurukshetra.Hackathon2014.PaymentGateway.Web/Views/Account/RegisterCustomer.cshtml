@@ -1,0 +1,28 @@
+﻿@model Kurukshetra.Hackathon2014.PaymentGateway.Web.Models.ViewModels.CustomerRegisterModel
+@{
+    ViewBag.Title = "RegisterCustomer";
+}
+
+<h2>RegisterCustomer</h2>
+
+@using (Html.BeginForm())
+{
+    <fieldset>
+        @Html.LabelFor(model => model.FullName) :
+        @Html.TextBoxFor(model => model.FullName)
+        <br />
+        @Html.LabelFor(model => model.UserName) :
+        @Html.TextBoxFor(model => model.UserName)
+        <br />
+        @Html.LabelFor(model => model.Password) :
+        @Html.PasswordFor(model => model.Password)
+        <br />
+        @Html.LabelFor(model => model.DoB) :
+        @Html.TextBoxFor(model => model.DoB, new { type = "time" })
+        <br />
+        @Html.LabelFor(model => model.InitialDeposit) : 
+        @Html.TextBoxFor(model => model.InitialDeposit)
+
+        <input type="submit" value="Add Merchant" />
+    </fieldset>
+}

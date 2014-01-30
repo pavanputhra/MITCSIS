@@ -16,7 +16,7 @@ namespace Kurukshetra.Hackathon2014.PaymentGateway.Domain
         }
 
         [Required]
-        public Guid Id { get; set; }
+        public long Id { get; set; }
 
         [Required]
         public String FullName { get; set; }
