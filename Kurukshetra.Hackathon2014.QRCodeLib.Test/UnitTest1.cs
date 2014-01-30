@@ -5,6 +5,8 @@ using System.Drawing.Design;
 using ZXing.Common;
 using ZXing.QrCode;
 using ZXing;
+using System.IO;
+using System.Drawing.Imaging;
 
 namespace Kurukshetra.Hackathon2014.QRCodeLib.Test
 {
@@ -34,24 +36,29 @@ namespace Kurukshetra.Hackathon2014.QRCodeLib.Test
             
         }
 
-        //[TestMethod]
-        //public void TestMethod2()
-        //{
-        //    Bitmap bmap = new Bitmap(Image.FromFile("text.png"));
-        //    QRCodeReader qrRead = new QRCodeReader();
-            
+        [TestMethod]
+        private void Decode()
+        {
+            Bitmap bitmap = new Bitmap(@"text.png");
+            try
+            {
+                MemoryStream memoryStream = new MemoryStream();
+                bitmap.Save(memoryStream, ImageFormat.Bmp);
 
+                byte[] byteArray = memoryStream.GetBuffer();
 
+                ZXing.LuminanceSource source = new RGBLuminanceSource(byteArray, bitmap.Width, bitmap.Height);
+                var binarizer = new HybridBinarizer(source);
+                var binBitmap = new BinaryBitmap(binarizer);
+                QRCodeReader qrCodeReader = new QRCodeReader();
 
-        //    //BitMatrix bmat = new BitMatrix(350, 350);
+                Result str = qrCodeReader.decode(binBitmap);
+                Assert.AreEqual(str, "Hello World!");
 
-        //    //for (int i = 0; i < bmap.Height; i++)
-        //    //{
-        //    //    for (int j = 0; j < bmap.Width; j++)
-        //    //    {
-        //    //        bmat[j][i] = bmap.GetPixel(j, i);
-        //    //    }
-        //    //}
+            }
+            catch { }
+
+        }
 
             
         //}
