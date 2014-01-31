@@ -8,7 +8,7 @@ using Kurukshetra.Hackathon2014.Client.Core;
 
 namespace Kurukshetra.Hackathon2014.Client.Core
 {
-    class AuthenticatePayment
+    public class AuthenticatePayment
     {
         public PaymentResponse ParsePaymentChallenge(string input, string userName, string key)
         {

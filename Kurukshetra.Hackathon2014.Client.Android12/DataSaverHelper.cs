@@ -41,6 +41,22 @@ namespace Kurukshetra.Hackathon2014.Client.Android12
             docToSave.Save(FileNamePath);
         }
 
+        public void DeleteCustomer(string userName)
+        {
+            if (File.Exists(FileNamePath))
+            {
+                var doc = XElement.Load(FileNamePath);
+                var ele = doc.Descendants().
+                    Where(p => p.Name == "Customer" && p.Attribute("UserName").Value == userName).
+                    SingleOrDefault();
+                if (ele != null)
+                {
+                    ele.Remove();
+                }
+                doc.Save(FileNamePath);
+            }
+        }
+
         public string[] GetCustomerAccouts()
         {
             if(File.Exists(FileNamePath))
@@ -88,7 +104,12 @@ namespace Kurukshetra.Hackathon2014.Client.Android12
 
         public void AddUrlBase(string baseUrl)
         {
-            if (File.Exists(FileNamePath))
+            if(!File.Exists(FileNamePath))
+            {
+                var doc1 = new XElement("Data",new XElement("BaseUrl", baseUrl));
+                doc1.Save(FileNamePath);
+            }
+            else
             {
                 var doc = XElement.Load(FileNamePath);
                 var ele = doc.Descendants().Where(p => p.Name == "BaseUrl").FirstOrDefault();

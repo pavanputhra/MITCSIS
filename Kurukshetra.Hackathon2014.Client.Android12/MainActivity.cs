@@ -25,19 +25,37 @@ namespace Kurukshetra.Hackathon2014.Client.Android12
             {
                 StartActivity(typeof(AddCustomerActivity));
             };
+
+            settingButton.Click += (s, e) =>
+            {
+                StartActivity(typeof(SettingActivity));
+            };
+
+            listOfCustomer.ItemClick += listOfCustomer_ItemClick;
             
+        }
+
+        void listOfCustomer_ItemClick(object sender, AdapterView.ItemClickEventArgs e)
+        {
+            string userName = users[e.Position];
+            string secreteKey = new DataSaverHelper().GetSecretForCustomer(userName);
+            Intent i = new Intent(this,typeof(CustomerDetailActivity));
+            i.PutExtra("UserName", userName);
+            i.PutExtra("SecretKey", secreteKey);
+            StartActivity(i);
         }
 
         protected override void OnResume()
         {
             base.OnResume();
 
-            var users = new DataSaverHelper().GetCustomerAccouts();
+            users = new DataSaverHelper().GetCustomerAccouts();
             if (users != null)
             {
                 listOfCustomer.Adapter = new ArrayAdapter<string>(this, Android.Resource.Layout.SimpleListItem1, users);
             }
         }
+        private string[] users;
         private Button createCustomerButton;
         private Button settingButton;
         private ListView listOfCustomer;

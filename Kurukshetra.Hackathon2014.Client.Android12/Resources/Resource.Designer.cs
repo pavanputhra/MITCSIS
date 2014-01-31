@@ -72,8 +72,8 @@ namespace Kurukshetra.Hackathon2014.Client.Android12
 			// aapt resource value: 0x7f060006
 			public const int authenticateButton = 2131099654;
 			
-			// aapt resource value: 0x7f06000c
-			public const int contentFrame = 2131099660;
+			// aapt resource value: 0x7f06000f
+			public const int contentFrame = 2131099663;
 			
 			// aapt resource value: 0x7f06000b
 			public const int cusomerList = 2131099659;
@@ -96,6 +96,9 @@ namespace Kurukshetra.Hackathon2014.Client.Android12
 			// aapt resource value: 0x7f060003
 			public const int scanedSecretText = 2131099651;
 			
+			// aapt resource value: 0x7f06000e
+			public const int setUrlButton = 2131099662;
+			
 			// aapt resource value: 0x7f06000a
 			public const int settingButton = 2131099658;
 			
@@ -104,6 +107,12 @@ namespace Kurukshetra.Hackathon2014.Client.Android12
 			
 			// aapt resource value: 0x7f060002
 			public const int textView2 = 2131099650;
+			
+			// aapt resource value: 0x7f06000d
+			public const int urlTextBox = 2131099661;
+			
+			// aapt resource value: 0x7f06000c
+			public const int urlTextLabel = 2131099660;
 			
 			static Id()
 			{
@@ -128,10 +137,13 @@ namespace Kurukshetra.Hackathon2014.Client.Android12
 			public const int Main = 2130903042;
 			
 			// aapt resource value: 0x7f030003
-			public const int zxingscanneractivitylayout = 2130903043;
+			public const int SettingView = 2130903043;
 			
 			// aapt resource value: 0x7f030004
-			public const int zxingscannerfragmentlayout = 2130903044;
+			public const int zxingscanneractivitylayout = 2130903044;
+			
+			// aapt resource value: 0x7f030005
+			public const int zxingscannerfragmentlayout = 2130903045;
 			
 			static Layout()
 			{

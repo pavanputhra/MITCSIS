@@ -29,18 +29,9 @@ namespace Kurukshetra.Hackathon2014.Client.Android12
 
             scanQRCode.Click += async (s, e) =>
             {
-                var scanner = new ZXing.Mobile.MobileBarcodeScanner(this);
-                scanner.UseCustomOverlay = false;
-
-                //We can customize the top and bottom text of the default overlay
-                scanner.TopText = "Hold the camera up to the barcode\nAbout 6 inches away";
-                scanner.BottomText = "Wait for the barcode to automatically scan!";
-
-                //Start scanning
-                var result = await scanner.Scan();
-
+                var result = await Utility.ReadQRCode(this);
                 if (result != null)
-                    processQRCode(result.Text);
+                    processQRCode(result);
             };
 
             doneButton.Click += (s, e) =>
@@ -52,6 +43,10 @@ namespace Kurukshetra.Hackathon2014.Client.Android12
                     {
                         new DataSaverHelper().AddNewCustomer(userNameText.Text, value[1]);
                         base.OnBackPressed();
+                    }
+                    else
+                    {
+                        Utility.ShowToastLong(this, "Invalid Data.");
                     }
                 }
             };
@@ -66,16 +61,16 @@ namespace Kurukshetra.Hackathon2014.Client.Android12
             }
             catch
             {
-                Toast.MakeText(this, "Not a valid QR code", ToastLength.Long);
+                Toast.MakeText(this, "Not a valid QR code", ToastLength.Long).Show();
             }
             if (type == CodeType.Secret)
             {
                 secretKeyText.Text = text;
-                Toast.MakeText(this, "Got you secret key", ToastLength.Long);
+                Toast.MakeText(this, "Got you secret key", ToastLength.Long).Show();
             }
             else
             {
-                Toast.MakeText(this, "Not a valid QR code",ToastLength.Long);
+                Toast.MakeText(this, "Not a valid QR code",ToastLength.Long).Show();
             }
         }
 
