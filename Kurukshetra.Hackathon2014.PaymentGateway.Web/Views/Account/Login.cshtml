@@ -10,9 +10,11 @@
 @using (Html.BeginForm())
 {
     <fieldset>
+        @Html.ValidationMessage("")
+        <br />
         @Html.LabelFor(model => model.UserName) :
         @Html.TextBoxFor(model => model.UserName)
-
+        <br />
         <input type="submit" value="Login" /> 
     </fieldset>  
 }

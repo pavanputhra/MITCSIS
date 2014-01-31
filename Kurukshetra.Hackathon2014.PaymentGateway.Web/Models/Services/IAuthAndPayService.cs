@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Kurukshetra.Hackathon2014.Dto;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -15,7 +16,13 @@ namespace Kurukshetra.Hackathon2014.PaymentGateway.Web.Models.Services
 
         string GetAuthChallenge(string username, long epochTime);
 
-        bool IsValidChallengeResponse(string customerId, long epochTime, string response);
+        void AuthenticateUser(string username, long epochTime);
+
+        bool IsUserAuthenticated(string username, long epochTime);
+
+        void InvalidateAuthToken(string username, long epochTime);
+
+        bool IsValidChallengeResponse(ChallengeResponse challengeResponse);
 
         bool IsValidPaymentToken(long merchantId, long orderReferenceNo, long epochTime, string token);
 

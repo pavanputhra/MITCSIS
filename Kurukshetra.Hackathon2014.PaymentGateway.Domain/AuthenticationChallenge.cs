@@ -9,6 +9,10 @@ namespace Kurukshetra.Hackathon2014.PaymentGateway.Domain
 {
     public class AuthenticationChallenge
     {
+        public AuthenticationChallenge()
+        {
+            AuthWindow = TimeSpan.Zero;
+        }
         [Required]
         public string UserName { get; set; }
 
@@ -20,5 +24,7 @@ namespace Kurukshetra.Hackathon2014.PaymentGateway.Domain
 
         [Required]
         public DateTimeOffset ExpireDate { get; set; }
+
+        public TimeSpan AuthWindow { get; set; }
     }
 }

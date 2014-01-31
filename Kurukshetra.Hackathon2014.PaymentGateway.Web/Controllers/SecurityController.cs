@@ -29,7 +29,7 @@ namespace Kurukshetra.Hackathon2014.PaymentGateway.Web.Controllers
         {
             try
             {
-                string secret = cryptoService.GetSecretOfUser(id);
+                string secret = authAndPayService.GetSecretOfUser(id);
                 string result = String.Format(@"00/{0}", secret);
                 QRConverter converter = new QRConverter();
                 BitMatrix bitMatrix = converter.GetQR(result);

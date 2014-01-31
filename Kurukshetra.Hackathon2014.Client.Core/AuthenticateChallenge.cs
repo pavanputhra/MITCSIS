@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Security.
+using System.Security;
 using Kurukshetra.Hackathon2014.Dto;
 
 namespace Kurukshetra.Hackathon2014.Client.Core

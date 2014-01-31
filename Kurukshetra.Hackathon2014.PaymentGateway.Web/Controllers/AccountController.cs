@@ -39,9 +39,16 @@ namespace Kurukshetra.Hackathon2014.PaymentGateway.Web.Controllers
         {
             if (ModelState.IsValid)
             {
-                long epochTime;
-                string challenge = authAndPayService.GenerateAuthChallenge(model.UserName,out epochTime);
-                return RedirectToAction("Authenticate", new { id = model.UserName, time = epochTime });
+                try
+                {
+                    long epochTime;
+                    string challenge = authAndPayService.GenerateAuthChallenge(model.UserName, out epochTime);
+                    return RedirectToAction("Authenticate", new { id = model.UserName, time = epochTime });
+                }
+                catch (InvalidOperationException exp)
+                {
+                    ModelState.AddModelError("", "Invalid Username");
+                }
             }
             return View();
         }
