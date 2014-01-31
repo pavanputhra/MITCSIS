@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Raksha.Extra</name>
+    </assembly>
+    <members>
+        <member name="T:Raksha.Security.DotNetUtilities">
+            <summary>
+                A class containing methods to interface the BouncyCastle world to the .NET Crypto world.
+            </summary>
+        </member>
+        <member name="M:Raksha.Security.DotNetUtilities.ToX509Certificate(Raksha.Asn1.X509.X509CertificateStructure)">
+            <summary>
+                Create an System.Security.Cryptography.X509Certificate from an X509Certificate Structure.
+            </summary>
+            <param name="x509Struct"></param>
+            <returns>A System.Security.Cryptography.X509Certificate.</returns>
+        </member>
+    </members>
+</doc>
