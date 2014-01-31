@@ -37,7 +37,7 @@ namespace Kurukshetra.Hackathon2014.QRCodeLib.Test
         }
 
         [TestMethod]
-        private void Decode()
+        public void Decode()
         {
             Bitmap bitmap = new Bitmap(@"text.png");
             try
