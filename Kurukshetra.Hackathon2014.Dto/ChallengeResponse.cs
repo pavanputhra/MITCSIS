@@ -6,11 +6,10 @@ using System.Threading.Tasks;
 
 namespace Kurukshetra.Hackathon2014.Dto
 {
-    public class ChallengeMAC
+    public class ChallengeResponse
     {
-        public long EpochTime{get;set;}
-        public string PID { get; set; }
+        public long EpochTime { get; set; }
+        public string UserName { get; set; }
         public string HMAC { get; set; }
-
     }
 }

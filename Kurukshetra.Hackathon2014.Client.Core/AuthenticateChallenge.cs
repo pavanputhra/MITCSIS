@@ -10,18 +10,18 @@ namespace Kurukshetra.Hackathon2014.Client.Core
 {
     public class AuthenticateChallenge
     {
-        public ChallengeMAC ParseAuthChallenge(string input, string userName)
+        public ChallengeResponse ParseAuthChallenge(string input, string userName)
         {
             char[] seps={'/'};
             String [] values = input.Split(seps);
             byte[] array = Encoding.UTF8.GetBytes(input);
-            ChallengeMAC cmac = new ChallengeMAC
+            ChallengeResponse cmac = new ChallengeResponse
             {
                 EpochTime = Convert.ToInt64 ( values[1]),
-                PID = userName,
-                HMAC = 
-
-        }
+                UserName = userName,
+                HMAC = "testing"
+            };
+            return cmac;
         }
     }
 }
