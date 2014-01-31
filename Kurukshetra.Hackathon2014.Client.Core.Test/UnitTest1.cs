@@ -8,7 +8,7 @@ namespace Kurukshetra.Hackathon2014.Client.Core.Test
     public class UnitTest1
     {
         [TestMethod]
-        public void TestMethod1()
+        public void TestingReturningMethodofHMACSHA1()
         {
             AuthenticateChallenge ac = new AuthenticateChallenge();
             var r=  ac.ParseAuthChallenge(@"00/5678/abc", "sharath", "pavan");

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Kurukshetra.Hackathon2014.Dto
 {
-    public class PaymentRequest
+    public class PaymentResponse
     {
         public long EpochTime { get; set; }
         public string MerchantID { get; set; }
