@@ -17,26 +17,32 @@ namespace Kurukshetra.Hackathon2014.Client.Core
     {
         public ChallengeResponse ParseAuthChallenge(string input, string userName,string key)
         {
-            char[] seps={'/'};
-            String [] values = input.Split(seps);
-            byte[] array = Encoding.UTF8.GetBytes(input+"/"+userName);
-            byte[] output =new byte[512];
+            char[] seps={'/'};//For Epoche Time
+            String [] values = input.Split(seps);//For Epoche Time
 
-            Sha512Digest s = new Sha512Digest();
-            IDigest dig = DigestUtilities.GetDigest("SHA1");
-            HMac hm = new HMac(dig);
-            hm.BlockUpdate(array, 0, array.Length);
-            hm.Init(new KeyParameter(array, 1, 34));
-            int len = hm.DoFinal(output, 0);
-
+           string op =  CalculateHMAC(input, userName, key);
 
             ChallengeResponse cmac = new ChallengeResponse
             {
                 EpochTime = Convert.ToInt64 ( values[1]),
                 UserName = userName,
-                HMAC = Base32Encoder.Encode(output)
+                HMAC = op
             };
             return cmac;
+        }
+
+        public string CalculateHMAC(string iPut, string uName,string HMACKey)
+        {
+            byte[] array = Encoding.UTF8.GetBytes(iPut + "/" + uName);
+            byte[] output = new byte[256];
+
+            IDigest dig = DigestUtilities.GetDigest("SHA256");
+            HMac hm = new HMac(dig);
+            byte[] keyArray = Base32Encoder.Decode(HMACKey);
+            hm.BlockUpdate(array, 0, array.Length);
+            hm.Init(new KeyParameter(keyArray, 0, keyArray.Length));
+            int len = hm.DoFinal(output, 0);
+            return Base32Encoder.Encode(output);
         }
     }
 }

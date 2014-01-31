@@ -58,6 +58,10 @@
       <Project>{8315427a-7d35-450d-b836-253e36027716}</Project>
       <Name>Kurukshetra.Hackathon2014.Client.Core</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Kurukshetra.Hackathon2014.Dto\Kurukshetra.Hackathon2014.Dto.csproj">
+      <Project>{277d3061-2da3-45e3-b0ce-46d73dc8ad13}</Project>
+      <Name>Kurukshetra.Hackathon2014.Dto</Name>
+    </ProjectReference>
   </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">

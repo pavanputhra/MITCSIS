@@ -38,7 +38,7 @@
   <ItemGroup>
     <Compile Include="ChallengeResponse.cs" />
     <Compile Include="CodeType.cs" />
-    <Compile Include="PaymentRequest.cs" />
+    <Compile Include="PaymentResponse.cs" />
     <Compile Include="EpochTimeHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

@@ -41,6 +41,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AuthenticateChallenge.cs" />
+    <Compile Include="AuthenticatePayment.cs" />
     <Compile Include="ClientCore.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
