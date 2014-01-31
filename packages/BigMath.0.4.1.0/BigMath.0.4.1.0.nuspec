@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>BigMath</id>
+    <version>0.4.1.0</version>
+    <title>BigMath</title>
+    <authors>Alexander Logger</authors>
+    <owners>Alexander Logger</owners>
+    <licenseUrl>https://github.com/inTagger/BigMath/blob/master/LICENSE.md</licenseUrl>
+    <projectUrl>https://github.com/inTagger/BigMath</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Portable class library for computations with big numbers such as Int128, Int256 and BigInteger.
+	  Supported platforms:
+
+      .NET Framework 4.5
+      .NET for Windows Store apps
+      .NET for Windows Phone 8 apps
+      Portable Class Libraries</description>
+    <summary>Portable class library for computations with big numbers such as Int128, Int256 and BigInteger.</summary>
+    <releaseNotes />
+    <language>en-US</language>
+    <tags>Math BigInteger Int128 Int256 BitConverter</tags>
+  </metadata>
+</package>

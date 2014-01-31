@@ -53,6 +53,12 @@
     <Compile Include="UnitTest1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Kurukshetra.Hackathon2014.Client.Core\Kurukshetra.Hackathon2014.Client.Core.csproj">
+      <Project>{8315427a-7d35-450d-b836-253e36027716}</Project>
+      <Name>Kurukshetra.Hackathon2014.Client.Core</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
       <ItemGroup>
