@@ -51,5 +51,58 @@ namespace Kurukshetra.Hackathon2014.Client.Android12
             }
             return null;
         }
+
+        public string GetSecretForCustomer(string userName)
+        {
+            if (File.Exists(FileNamePath))
+            {
+                var doc = XElement.Load(FileNamePath);
+                var ele = doc.Descendants().
+                    Where(p => p.Name == "Customer" && p.Attribute("UserName").Value == userName).
+                    SingleOrDefault();
+                if (ele != null)
+                {
+                    var secret = ele.Descendants().Where(p => p.Name == "Secret").SingleOrDefault();
+                    if(secret != null)
+                    {
+                        return secret.Value;
+                    }
+                }
+            }
+            return "";
+        }
+
+        public string GetUrlBase()
+        {
+            if (File.Exists(FileNamePath))
+            {
+                var doc = XElement.Load(FileNamePath);
+                var ele = doc.Descendants().Where(p => p.Name == "BaseUrl").FirstOrDefault();
+                if(ele != null)
+                {
+                    return ele.Value;
+                }
+            }
+            return "http://localhost";
+        }
+
+        public void AddUrlBase(string baseUrl)
+        {
+            if (File.Exists(FileNamePath))
+            {
+                var doc = XElement.Load(FileNamePath);
+                var ele = doc.Descendants().Where(p => p.Name == "BaseUrl").FirstOrDefault();
+                if (ele != null)
+                {
+                    ele.Value = baseUrl;
+                }
+                else
+                {
+                    doc.Add(new XElement("BaseUrl", baseUrl));
+                }
+                doc.Save(FileNamePath);
+
+            }
+        }
     }
 }

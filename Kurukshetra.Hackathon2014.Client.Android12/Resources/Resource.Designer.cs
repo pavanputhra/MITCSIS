@@ -66,17 +66,26 @@ namespace Kurukshetra.Hackathon2014.Client.Android12
 		public partial class Id
 		{
 			
-			// aapt resource value: 0x7f060007
-			public const int addCustomerButton = 2131099655;
-			
 			// aapt resource value: 0x7f060009
-			public const int contentFrame = 2131099657;
+			public const int addCustomerButton = 2131099657;
 			
 			// aapt resource value: 0x7f060006
-			public const int cusomerList = 2131099654;
+			public const int authenticateButton = 2131099654;
+			
+			// aapt resource value: 0x7f06000c
+			public const int contentFrame = 2131099660;
+			
+			// aapt resource value: 0x7f06000b
+			public const int cusomerList = 2131099659;
+			
+			// aapt resource value: 0x7f060008
+			public const int deleteCustomerButton = 2131099656;
 			
 			// aapt resource value: 0x7f060001
 			public const int enteredUserNameText = 2131099649;
+			
+			// aapt resource value: 0x7f060007
+			public const int makePaymentButton = 2131099655;
 			
 			// aapt resource value: 0x7f060005
 			public const int newCustomerDone = 2131099653;
@@ -87,8 +96,8 @@ namespace Kurukshetra.Hackathon2014.Client.Android12
 			// aapt resource value: 0x7f060003
 			public const int scanedSecretText = 2131099651;
 			
-			// aapt resource value: 0x7f060008
-			public const int settingButton = 2131099656;
+			// aapt resource value: 0x7f06000a
+			public const int settingButton = 2131099658;
 			
 			// aapt resource value: 0x7f060000
 			public const int textView1 = 2131099648;
@@ -113,13 +122,16 @@ namespace Kurukshetra.Hackathon2014.Client.Android12
 			public const int AddCustomer = 2130903040;
 			
 			// aapt resource value: 0x7f030001
-			public const int Main = 2130903041;
+			public const int CustomerDetail = 2130903041;
 			
 			// aapt resource value: 0x7f030002
-			public const int zxingscanneractivitylayout = 2130903042;
+			public const int Main = 2130903042;
 			
 			// aapt resource value: 0x7f030003
-			public const int zxingscannerfragmentlayout = 2130903043;
+			public const int zxingscanneractivitylayout = 2130903043;
+			
+			// aapt resource value: 0x7f030004
+			public const int zxingscannerfragmentlayout = 2130903044;
 			
 			static Layout()
 			{

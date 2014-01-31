@@ -47,8 +47,12 @@ namespace Kurukshetra.Hackathon2014.Client.Android12
             {
                 if (!string.IsNullOrEmpty(userNameText.Text) && !string.IsNullOrEmpty(secretKeyText.Text))
                 {
-                    new DataSaverHelper().AddNewCustomer(userNameText.Text, secretKeyText.Text);
-                    base.OnBackPressed();
+                    string [] value = secretKeyText.Text.Split(new char [] {'/'});
+                    if (value.Length > 1)
+                    {
+                        new DataSaverHelper().AddNewCustomer(userNameText.Text, value[1]);
+                        base.OnBackPressed();
+                    }
                 }
             };
 		}
