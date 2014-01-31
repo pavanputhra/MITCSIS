@@ -8,6 +8,8 @@ using Android.OS;
 using Android.Runtime;
 using Android.Views;
 using Android.Widget;
+using Kurukshetra.Hackathon2014.Client.Core;
+using Kurukshetra.Hackathon2014.Dto;
 
 namespace Kurukshetra.Hackathon2014.Client.Android12
 {
@@ -38,9 +40,40 @@ namespace Kurukshetra.Hackathon2014.Client.Android12
                 var result = await scanner.Scan();
 
                 if (result != null)
-                    secretKeyText.Text = result.Text;
+                    processQRCode(result.Text);
+            };
+
+            doneButton.Click += (s, e) =>
+            {
+                if (!string.IsNullOrEmpty(userNameText.Text) && !string.IsNullOrEmpty(secretKeyText.Text))
+                {
+                    new DataSaverHelper().AddNewCustomer(userNameText.Text, secretKeyText.Text);
+                    base.OnBackPressed();
+                }
             };
 		}
+
+        private void processQRCode(string text)
+        {
+            var type = CodeType.Invalid;
+            try
+            {
+                type = new ClientCore().InputCheck(text);
+            }
+            catch
+            {
+                Toast.MakeText(this, "Not a valid QR code", ToastLength.Long);
+            }
+            if (type == CodeType.Secret)
+            {
+                secretKeyText.Text = text;
+                Toast.MakeText(this, "Got you secret key", ToastLength.Long);
+            }
+            else
+            {
+                Toast.MakeText(this, "Not a valid QR code",ToastLength.Long);
+            }
+        }
 
         private EditText userNameText;
         private EditText secretKeyText;

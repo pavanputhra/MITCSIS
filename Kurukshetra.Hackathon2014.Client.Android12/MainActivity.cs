@@ -21,10 +21,22 @@ namespace Kurukshetra.Hackathon2014.Client.Android12
             createCustomerButton = FindViewById<Button>(Resource.Id.addCustomerButton);
             settingButton = FindViewById<Button>(Resource.Id.settingButton);
             listOfCustomer = FindViewById<ListView>(Resource.Id.cusomerList);
-            createCustomerButton.Touch += (object sender, View.TouchEventArgs e) =>
+            createCustomerButton.Click += (sender, e) =>
             {
                 StartActivity(typeof(AddCustomerActivity));
             };
+            
+        }
+
+        protected override void OnResume()
+        {
+            base.OnResume();
+
+            var users = new DataSaverHelper().GetCustomerAccouts();
+            if (users != null)
+            {
+                listOfCustomer.Adapter = new ArrayAdapter<string>(this, Android.Resource.Layout.SimpleListItem1, users);
+            }
         }
         private Button createCustomerButton;
         private Button settingButton;

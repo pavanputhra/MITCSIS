@@ -56,6 +56,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AddCustomerActivity.cs" />
+    <Compile Include="DataSaverHelper.cs" />
     <Compile Include="MainActivity.cs" />
     <Compile Include="Resources\Resource.Designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -74,6 +75,16 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Properties\AndroidManifest.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Kurukshetra.Hackathon2014.Client.Core\Kurukshetra.Hackathon2014.Client.Core.csproj">
+      <Project>{8315427a-7d35-450d-b836-253e36027716}</Project>
+      <Name>Kurukshetra.Hackathon2014.Client.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Kurukshetra.Hackathon2014.Dto\Kurukshetra.Hackathon2014.Dto.csproj">
+      <Project>{277d3061-2da3-45e3-b0ce-46d73dc8ad13}</Project>
+      <Name>Kurukshetra.Hackathon2014.Dto</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
