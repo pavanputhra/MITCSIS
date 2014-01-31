@@ -1,5 +1,18 @@
-﻿@{
+﻿@model Kurukshetra.Hackathon2014.PaymentGateway.Web.Models.ViewModels.LoginQRViewModel
+
+@{
     ViewBag.Title = "Login";
 }
 
 <h2>Login</h2>
+
+
+@using (Html.BeginForm())
+{
+    <fieldset>
+        @Html.LabelFor(model => model.UserName) :
+        @Html.TextBoxFor(model => model.UserName)
+
+        <input type="submit" value="Login" /> 
+    </fieldset>  
+}

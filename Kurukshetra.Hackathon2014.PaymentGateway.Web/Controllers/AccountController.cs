@@ -14,10 +14,12 @@ namespace Kurukshetra.Hackathon2014.PaymentGateway.Web.Controllers
         // GET: /Account/
 
         private IRegistrationService registrationService;
+        private IAuthAndPayService authAndPayService;
 
-        public AccountController(IRegistrationService registrationService)
+        public AccountController(IRegistrationService registrationService,IAuthAndPayService authAndPayService)
         {
             this.registrationService = registrationService;
+            this.authAndPayService = authAndPayService;
         }
 
         public ActionResult Index()
@@ -29,6 +31,26 @@ namespace Kurukshetra.Hackathon2014.PaymentGateway.Web.Controllers
         public ActionResult Login()
         {
             return View();
+        }
+
+        [AllowAnonymous]
+        [HttpPost]
+        public ActionResult Login(LoginQRViewModel model)
+        {
+            if (ModelState.IsValid)
+            {
+                long epochTime;
+                string challenge = authAndPayService.GenerateAuthChallenge(model.UserName,out epochTime);
+                return RedirectToAction("Authenticate", new { id = model.UserName, time = epochTime });
+            }
+            return View();
+        }
+
+        [AllowAnonymous]
+        public ActionResult Authenticate(string id,long time)
+        {
+            AuthViewModel vm = new AuthViewModel { UserName = id, Time = time };
+            return View(vm);
         }
 
         [AllowAnonymous]

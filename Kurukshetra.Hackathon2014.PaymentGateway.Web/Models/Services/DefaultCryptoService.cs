@@ -20,33 +20,11 @@ namespace Kurukshetra.Hackathon2014.PaymentGateway.Web.Models.Services
             }
         }
 
-        public bool IsValidChallengeResponse(long customerId, long epochTime, string response)
-        {
-            throw new NotImplementedException();
-        }
 
-        public bool IsValidPaymentToken(long merchantId, long orderReferenceNo, long epochTime)
+        public string CalculateHmac(string key, string input)
         {
-            throw new NotImplementedException();
-        }
-
-        public bool IsPaymentComplete(long merchantId, long orderReferenceNo, long epochTime)
-        {
-            throw new NotImplementedException();
-        }
-
-        public string GetSecretOfUser(string username)
-        {
-            using (PaymentGatewayDbContext dbContext = new PaymentGatewayDbContext())
-            {
-                var result = dbContext.Credentials.SingleOrDefault(p => p.UserName == username);
-                if (result != null && (result.CreatedDate > DateTimeOffset.Now.AddMinutes(-15)))
-                {
-                    string secret = Base32Encoder.Encode(result.SecretKey);
-                    return secret;
-                }
-                throw new Exception("No Key");
-            }
+            //TODO: actual implementation
+            return "testing";
         }
     }
 }

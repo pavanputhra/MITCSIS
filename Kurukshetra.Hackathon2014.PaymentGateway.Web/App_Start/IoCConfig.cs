@@ -24,6 +24,7 @@ namespace Kurukshetra.Hackathon2014.PaymentGateway.Web
 
             container.RegisterType<IRegistrationService, DefaultRegistrationService>();
             container.RegisterType<ICryptoService, DefaultCryptoService>();
+            container.RegisterType<IAuthAndPayService, DefaultAuthAndPayService>();
 
             return container;
         }

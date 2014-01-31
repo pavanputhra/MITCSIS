@@ -15,11 +15,13 @@ namespace Kurukshetra.Hackathon2014.PaymentGateway.Web.Controllers
         //
         // GET: /Security/
 
-        ICryptoService cryptoService;
+        private ICryptoService cryptoService;
+        private IAuthAndPayService authAndPayService;
 
-        public SecurityController(ICryptoService cryptoService)
+        public SecurityController(ICryptoService cryptoService,IAuthAndPayService authAndPayService)
         {
             this.cryptoService = cryptoService;
+            this.authAndPayService = authAndPayService;
         }
 
         [AllowAnonymous]
@@ -28,7 +30,7 @@ namespace Kurukshetra.Hackathon2014.PaymentGateway.Web.Controllers
             try
             {
                 string secret = cryptoService.GetSecretOfUser(id);
-                string result = String.Format(@"00/{0}/{1}", id, secret);
+                string result = String.Format(@"00/{0}", secret);
                 QRConverter converter = new QRConverter();
                 BitMatrix bitMatrix = converter.GetQR(result);
                 return new QRImageResult(bitMatrix);
@@ -38,6 +40,24 @@ namespace Kurukshetra.Hackathon2014.PaymentGateway.Web.Controllers
                 return new HttpStatusCodeResult(401);
             }
             
+        }
+
+        [AllowAnonymous]
+        public ActionResult AuthChallenge(string id,long time)
+        {
+            try
+            {
+                string secret = authAndPayService.GetAuthChallenge(id, time);
+                string result = String.Format(@"01/{0}/{1}", time,secret);
+                QRConverter converter = new QRConverter();
+                BitMatrix bitMatrix = converter.GetQR(result);
+                return new QRImageResult(bitMatrix);
+            }
+            catch
+            {
+                return new HttpStatusCodeResult(401);
+            }
+
         }
 
     }

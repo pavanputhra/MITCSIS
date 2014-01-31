@@ -155,10 +155,14 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\Infrastructure\QRImageResult.cs" />
+    <Compile Include="Models\Services\DefaultAuthAndPayService.cs" />
     <Compile Include="Models\Services\DefaultCryptoService.cs" />
     <Compile Include="Models\Services\DefaultRegistrationService.cs" />
+    <Compile Include="Models\Services\IAuthAndPayService.cs" />
     <Compile Include="Models\Services\ICryptoService.cs" />
     <Compile Include="Models\Services\IRegistrationService.cs" />
+    <Compile Include="Models\ViewModels\AuthViewModel.cs" />
+    <Compile Include="Models\ViewModels\LoginQRViewModel.cs" />
     <Compile Include="Models\ViewModels\MerchantRegisterModel.cs" />
     <Compile Include="Models\ViewModels\CustomerRegisterModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -260,8 +264,13 @@
     <Content Include="Views\Account\RegisterMerchantSuccess.cshtml" />
     <Content Include="Views\Account\RegisterCustomer.cshtml" />
     <Content Include="Views\Account\RegisterCustomerSuccess.cshtml" />
+    <Content Include="Views\Account\Authenticate.cshtml" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Kurukshetra.Hackathon2014.Dto\Kurukshetra.Hackathon2014.Dto.csproj">
+      <Project>{277d3061-2da3-45e3-b0ce-46d73dc8ad13}</Project>
+      <Name>Kurukshetra.Hackathon2014.Dto</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Kurukshetra.Hackathon2014.PaymentGateway.Domain\Kurukshetra.Hackathon2014.PaymentGateway.Domain.csproj">
       <Project>{58545cad-945d-4ab4-abb6-b613c51eadf1}</Project>
       <Name>Kurukshetra.Hackathon2014.PaymentGateway.Domain</Name>

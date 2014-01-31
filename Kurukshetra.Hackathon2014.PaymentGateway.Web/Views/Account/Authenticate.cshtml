@@ -1,0 +1,9 @@
+﻿@model Kurukshetra.Hackathon2014.PaymentGateway.Web.Models.ViewModels.AuthViewModel
+
+@{
+    ViewBag.Title = "Authenticate";
+}
+
+<h2>Authenticate</h2>
+
+<img src="@Url.Action("AuthChallenge","Security", new { id = Model.UserName, time = Model.Time})" />
