@@ -7,3 +7,5 @@
 <h2>Authenticate</h2>
 
 <img src="@Url.Action("AuthChallenge","Security", new { id = Model.UserName, time = Model.Time})" />
+
+@Html.ActionLink("Autheticated", "Account", new { id = Model.UserName, time = Model.Time })

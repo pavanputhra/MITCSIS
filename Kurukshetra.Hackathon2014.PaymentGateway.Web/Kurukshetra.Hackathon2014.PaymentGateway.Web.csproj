@@ -286,6 +286,7 @@
     <Content Include="Views\Account\RegisterCustomer.cshtml" />
     <Content Include="Views\Account\RegisterCustomerSuccess.cshtml" />
     <Content Include="Views\Account\Authenticate.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Kurukshetra.Hackathon2014.Dto\Kurukshetra.Hackathon2014.Dto.csproj">

@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using Kurukshetra.Hackathon2014.PaymentGateway.Web.Models.ViewModels;
 using Kurukshetra.Hackathon2014.PaymentGateway.Web.Models.Services;
+using System.Web.Security;
 
 namespace Kurukshetra.Hackathon2014.PaymentGateway.Web.Controllers
 {
@@ -58,6 +59,19 @@ namespace Kurukshetra.Hackathon2014.PaymentGateway.Web.Controllers
         {
             AuthViewModel vm = new AuthViewModel { UserName = id, Time = time };
             return View(vm);
+        }
+
+        [AllowAnonymous]
+        public ActionResult Autheticated(string id, long time)
+        {
+            var result = authAndPayService.IsUserAuthenticated(id, time);
+            if (result)
+            {
+                authAndPayService.InvalidateAuthToken(id, time);
+                FormsAuthentication.SetAuthCookie(id, false);
+                return RedirectToAction("Index", "Home");
+            }
+            return View("Authenticate");
         }
 
         [AllowAnonymous]
