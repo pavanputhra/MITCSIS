@@ -1,0 +1,11 @@
+﻿@model Kurukshetra.Hackathon2014.PaymentGateway.Web.Model.ViewModel.POViewModel
+
+@{
+    ViewBag.Title = "Purchase";
+}
+
+<h2>Purchase</h2>
+
+<p>Here is you purchase token</p>
+
+<img src="@Url.Action("PurchaseToker","Security", new { id = Model.MerchantId, time = Model.OrderId})" />
